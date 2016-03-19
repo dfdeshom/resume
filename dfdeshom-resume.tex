@@ -1,0 +1,127 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+
+%%% Local Variables: 
+%%% coding: utf-8
+%%% mode: latex
+%%% TeX-engine: xetex
+%%% End: 
+
+\documentclass[10pt,letterpaper,final]{moderncv}
+\usepackage{fontspec}
+\ifx\HCode\UnDef\else\hypersetup{tex4ht}\fi 
+\moderncvtheme[darkred]{classic}
+
+% DOCUMENT LAYOUT
+\usepackage[scale=0.85]{geometry}
+\setlength{\hintscolumnwidth}{2cm}
+\AtBeginDocument{\recomputelengths}
+% FONTS
+\usepackage[utf8]{inputenc}
+\defaultfontfeatures{Mapping=tex-text} % converts LaTeX specials (``quotes'' --- dashes etc.) to unicode
+
+% Remove % to set to different fonts
+%\setromanfont [Ligatures={Common},Numbers={OldStyle}]{Adobe Caslon Pro}
+%\setmonofont[Scale=0.8]{Monaco} 
+
+% ---- CUSTOM AMPERSAND
+\newcommand{\amper}{{\fontspec[Scale=.95]{Adobe Caslon Pro}\selectfont\itshape\&}}
+
+% ---- MARGIN YEARS
+%\newcommand{\years}[1]{\marginpar{\scriptsize #1}}
+
+
+% PDF SETUP
+% ---- FILL IN HERE THE DOC TITLE AND AUTHOR
+
+
+% Personal Information 
+\firstname{Didier}
+\familyname{Deshommes}
+\address{600 N 7th St.}{McAllen, TX 78501}
+\mobile{(919) 616-0344}
+\email{dfdeshom@gmail.com}
+
+\title{Didier Deshommes' Resume}
+
+\nopagenumbers{}
+
+\begin{document} 
+
+\maketitle
+
+\section{Executive Summary} 
+  \cvline{Summary:}{Backend Python engineer with experience in creating
+    and implementing scalable solutions in RESTful
+    API design, web-crawling, data processing/analytics pipelines, database schemas, analytics and search.}
+\section{Experience} 
+  \cventry{Spring 2009 - February 2016}{Systems and architecture Engineer}{Parse.ly}{New York, NY}{}{
+      \begin{itemize}
+        \item Designed and created an API for our publishers to access their
+          analytics and recommmendations data. The API powers multiple
+          live dashboards and widgets. It serves on average 500 requests per second
+          and peaks up to 1000-1500 requests per second. The
+          documentation for the API is here:
+          \url{https://www.parsely.com/docs/api/overview/endpoint.html}
+          . Technologies used: Tornado, Redis, MongoDB, ElasticSearch, Cassandra.
+        \item Designed and created crawling system that processes millions of URLS per 
+          month. Crawlers collect informative metadata from publishers' page for 
+          display on the analytics dashboard. Technologies used:
+          Scrapy, MongoDB, Redis. 
+        \item  Implemented several features in our real-time and batch
+          analytics pipeline that processes up to 10M events per
+          day. Technologies used: MapReduce, Pig, Spark, Storm, ElasticSearch, Cassandra.  
+        % \item Created a processing pipeline for crawled documents to enrich with 
+        %   medata before saving to database. The metadata added include possible 
+        %   topics for a given document and word count. 
+          \item Designed and implemented flexible auto-complete search for our
+            dashboard analytics users. With this feature, users were
+            able to search millions of titles, authors and sections in
+            a unified way and obtained results within 200ms.
+        \item Automated  configuration and deployment for machines
+          that were used to do API, crawling or search work using Chef
+          and Vagrant.
+        \item Designed and developped named entity recognition system using Solr, 
+          the Wikipedia index, Wikipedia traffic data, and NLTK.
+        \item Wrote and launch the backend prototype to the Parse.ly
+          reader, an RSS feed reader that displays articles from the
+          web based on a user's interests, using Django and Solr. 
+      \end{itemize}
+  }
+  \cventry{Winter 2007 - Spring 2008}{Senior Python
+    contractor}{Wordstream}{Boston, MA}{}{
+    \begin{itemize}
+      \item Designed and implemented an a keyword-matching algorithm
+        that accepts documents as its input and produces a list of
+        suggested hyperlinks to be added by a user. The suggested
+        keywords are based on the user's profile data. 
+    \end{itemize}
+  }
+  \cventry{2007 - 2008}{Sotware
+    Engineer}{Intelligent Information Systems}{Durham, NC}{}{
+    \begin{itemize}
+      \item Helped design and implement a web application that allows
+        some North Carolina counties to handle and process appeals
+        related to taxes on property made by residents of these
+        counties using C\#, ASP.NET, MS SQL and Javascript 
+      \item Designed and implemented a website so clients could could
+        access and browse property inspection information 
+      \item Implemented and improved a procedure to port and test
+        programs written in VB6 to VB.NET. Converted over 100 programs
+        written in VB6 code to VB.NET using a combination of the MS
+        conversion tool and the Python scripting language. 
+    \end{itemize}
+  }
+
+\section{Education}
+\cventry {Fall 2006 - Winter 2008}{MS Applied Mathematics, North
+  Carolina State University} {Raleigh, NC}{}{}{}
+\cventry{Fall 2001 - Winter 2006}{BS Computer Science, North Carolina State University}{Raleigh, NC}{}{}{}
+\cventry{Fall 2001 - Winter 2006}{BS Applied Mathematics, North Carolina State University}{Raleigh, NC}{}{}{}
+
+\section{Extra}
+\cvlistitem{Presenter,PyData: ``Wikipedia Indexing and Analysis'' - see \url{https://vimeo.com/53091620}}
+\cvlistitem{Contributor to open source projects - see
+    \url{https://github.com/dfdeshom}}
+
+\end{document}
