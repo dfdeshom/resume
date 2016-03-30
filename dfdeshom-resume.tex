@@ -7,7 +7,7 @@
 %%% TeX-engine: xetex
 %%% End: 
 
-\documentclass[10pt,letterpaper,final]{moderncv}
+\documentclass[9pt,letterpaper,final]{moderncv}
 \usepackage{fontspec}
 \ifx\HCode\UnDef\else\hypersetup{tex4ht}\fi 
 \moderncvtheme[darkred]{classic}
@@ -51,28 +51,50 @@
 \maketitle
 
 \section{Executive Summary} 
-  \cvline{Summary:}{Python engineer with experience in creating
-    and implementing scalable solutions in RESTful
-    API design, web-crawling, data processing/analytics pipelines, database schemas, and search.}
+  \cvline{Summary}{Python engineer who has designed and implemented large-scale production systems. Experienced with RESTful APIs, high-throughput web crawlers, and fast data processing pipelines for analytics and search workloads. Especially interested in systems where either data volume or velocity is high.
+}
+\cvline{Technologies}{ Elasticsearch, Cassandra, Kafka, MongoDB,
+  Redis, Solr, Pig, Spark, Storm, Tornado web framework, Scrapy framework}
+\cvline{Languages}{Python, Java}
 \section{Experience} 
-  \cventry{Spring 2009 - February 2016}{Systems and architecture Engineer}{Parse.ly}{New York, NY}{}{
+  \cventry{Spring 2011 - February 2016}{Systems and architecture Engineer}{Parse.ly}{New York, NY}{}{
       \begin{itemize}
-        \item Designed and created an API for our publishers to access their
-          analytics and recommendations data. The API powers multiple
-          live dashboards and widgets. It serves on average 500 requests per second
-          and peaks up to 1000-1500 requests per second. The
-          documentation for the API is here:
-          \url{https://www.parsely.com/docs/api/overview/endpoint.html}
-          . Technologies used: Tornado, Redis, MongoDB, ElasticSearch,
-          Cassandra. 
-        \item Designed and created the crawling system that processes millions of URLS per 
-          month. Crawlers collect informative metadata from publishers' pages for 
+        \item Lead implementation of major backend systems for an
+          engineering team that grew from 3 to 20 over the course of 4
+          years. During this period, the company also grew to hundreds
+          of customers, millions in revenue and massive data
+          volumes. An overview of Parse.ly's core product is available
+          on its website.
+        \item After seed financing round in 2011, company hired other engineers to
+          focus on areas like dashboard design and time series data. Took full
+          ownership over backend systems and APIs while company pivoted into the
+          content analytics market, where it ended up finding
+          success. 
+          \item  Built the second version of our API, which allowed
+            customers to access analytics and recommendations data. It
+            was adopted by 40\% of customers and by 2015 was serving 2
+            billion calls per month. It serves 500
+            requests per second and peaks up to
+            2,000 requests per second. It powers
+            popular websites like NewYorker.com and
+            Arstechnica.com. Also wrote its public documentation. 
+        % \item Designed and created an API for our publishers to access their
+        %   analytics and recommendations data. The API powers multiple
+        %   live dashboards and widgets. It serves on average 500 requests per second
+        %   and peaks up to 1000-1500 requests per second. The
+        %   documentation for the API is here:
+        %   \url{https://www.parsely.com/docs/api/overview/endpoint.html}
+        %   . Technologies used: Tornado, Redis, MongoDB, ElasticSearch,
+        %   Cassandra.
+          \item Assisted with migration from Rackspace Cloud to Amazon Web Services.
+          \item Created the crawling system that processes over 100
+            million URLs per month. Crawlers collect informative
+            metadata from publishers' pages for 
           display on the Parse.ly's Dash analytics dashboard.  
         \item  Implemented several features in our real-time and batch
           analytics pipeline that processes hundreds of millions of events per
           day. The pipeline powers the Parse.ly's Dash analytics
-          product. Technologies used: Pig, Spark, Storm,
-          ElasticSearch, Cassandra.   
+          product.    
         \item Designed and implemented flexible auto-complete search for our
             dashboard analytics users. Users could complete either the beginning, middle or end of
             several words. Users were
@@ -86,11 +108,38 @@
         \item Automated  configuration and deployment for machines
           that were used to do API, crawling or search work using Chef
           and Vagrant.
-        \item Wrote and launched the back-end prototype to the Parse.ly
-          reader, an RSS feed reader that displays articles from the
-          web based on a user's interests, using Django and Solr. 
+          \item During period of high growth, performed several
+            technology evaluations as company refreshed its technology
+            stack for scale. Company raised series A financing in 2013
+            and grew to a total headcount of over 40, while landing
+            new customers that included the highest-traffic websites
+            on the Internet, such as Reuters, The Huffington Post,
+            Business Insider, and WIRED. Evaluated distributed systems
+            like Elasticsearch and Cassandra, which were eventually
+            adopted to replace MongoDB and Solr. 
       \end{itemize}
   }
+  \cventry{Summer 2009 - Sprint 2011}{Software Engineer \& Employee \#1}{Parse.ly}{New York, NY}{}{
+    \begin{itemize}
+      \item First engineering hire at an early-stage startup that was
+        part of Dreamit Ventures 2009, a YCombinator-like startup
+        accelerator program in Philadelphia, PA. 
+      \item Wrote and launched the back-end to the Parse.ly Reader[4],
+        a news article reader (similar concept to Flipboard, but
+        before Flipboard's launch) that displayed articles from the
+        web based on a user interests. Used Django and Solr. Worked
+        directly with CTO. 
+      \item Rewrote backend to support a content recommendation API
+          for publishers, as company moved into the enterprise API
+          space serving content publishers. These systems helped the
+          company land its first customers. Worked as sole full-time
+          engineer through Parse.ly's bootstrapping period. 
+        \item  Company raised a seed financing round in 2011 and
+          changed its focus, while re-using technology developed
+          during this founding period.  
+    \end{itemize}
+  }
+
   \cventry{Winter 2007 - Spring 2008}{Senior Python
     contractor}{Wordstream}{Boston, MA}{}{
     \begin{itemize}
