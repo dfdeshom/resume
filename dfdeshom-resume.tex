@@ -7,7 +7,7 @@
 %%% TeX-engine: xetex
 %%% End: 
 
-\documentclass[9pt,letterpaper,final]{moderncv}
+\documentclass[8pt,letterpaper,final]{moderncv}
 \usepackage{fontspec}
 \ifx\HCode\UnDef\else\hypersetup{tex4ht}\fi 
 \moderncvtheme[darkred]{classic}
@@ -26,6 +26,7 @@
 
 % ---- CUSTOM AMPERSAND
 \newcommand{\amper}{{\fontspec[Scale=.95]{Adobe Caslon Pro}\selectfont\itshape\&}}
+\newcommand{\fan}{\phantom{caption}}
 
 % ---- MARGIN YEARS
 %\newcommand{\years}[1]{\marginpar{\scriptsize #1}}
@@ -33,7 +34,6 @@
 
 % PDF SETUP
 % ---- FILL IN HERE THE DOC TITLE AND AUTHOR
-
 
 % Personal Information 
 \firstname{Didier}
@@ -53,14 +53,39 @@
 \section{Executive Summary} 
   \cvline{Summary}{Python engineer who has designed and implemented large-scale production systems. Experienced with RESTful APIs, high-throughput web crawlers, and fast data processing pipelines for analytics and search workloads. Especially interested in systems where either data volume or velocity is high.
 }
-\cvline{Production Experience}{ Elasticsearch, Cassandra, Kafka, MongoDB,
-  Redis, Solr, Pig, Spark, Storm, Django and Tornado web frameworks, Scrapy framework}
+\cvline{Production Experience}{ Spark, Chef/Ansible, AWS/EMR,
+  Elasticsearch, Redshift, Cassandra, Kafka, MongoDB,
+  Redis, Solr, Pig, Storm, Django, Tornado, Scrapy framework}
 \cvline{Languages}{Python, Java}
-\section{Experience} 
-  \cventry{Spring 2011 - February 2016}{Backend Lead}{Parse.ly}{New
+\section{Experience}
+  \cventry{January 2017 - Present}{Data Engineer}{Restless Bandit}{San
+  Francisco, CA}{}{
+  \begin{itemize}
+  \item  Moved critical parts of our Python Spark jobs to Cython.     
+  \item Helped in the migration of Spark output data from CloudSearch to ElastickSearch
+  \end{itemize}
+}
+  \cventry{May 2016 - January 2017}{Software Engineer}{Shareaholic}{Boston, MA }{}{
+      \begin{itemize}
+         \item Lead design and implementation of a system that built
+          user profiles  from various attributes such as 
+          geographic location, content  of pages visited, referrer
+          data. These profiles could then be used for highly-specific
+          targeting and data sales to various data partners. Wrote
+          much of the tooling to make launching the system simple and
+          automatic. The system has delivered thousands of additional
+          revenue to data partners in its first 3 months existence.
+        \item Lead engineering effort to revamp our 100-machine
+          infrastructure managed by Chef. Re-wrote many of our custom
+            recipes and roles, added more recipes to increase
+            automation. Wrote a tool to make cloning or creating new
+            machines from AWS simpler. 
+       \end{itemize}
+  }
+  \cventry{ Spring 2011 - February 2016}{Backend Lead}{Parse.ly}{New
     York, NY (Fully Remote Team)}{}{
       \begin{itemize}
-        \item Lead implementation of major backend systems for an
+        \item  Lead implementation of major backend systems for an
           engineering team that grew from 3 to 20 over the course of 4
           years. During this period, the company also grew to hundreds
           of customers, millions in revenue and massive data
@@ -71,7 +96,7 @@
           ownership over backend systems and APIs while company pivoted into the
           content analytics market, where it ended up finding
           success. 
-          \item  Built the second version of our API, which allowed
+          \item  Built our API, which allowed
             customers to access analytics and recommendations data. It
             was adopted by 40\% of customers and by 2015 was serving 2
             billion calls per month. It serves 500
@@ -90,7 +115,6 @@
         %   \url{https://www.parsely.com/docs/api/overview/endpoint.html}
         %   . Technologies used: Tornado, Redis, MongoDB, ElasticSearch,
         %   Cassandra.
-          \item Assisted with migration from Rackspace Cloud to Amazon Web Services.
           \item Created the crawling system that processes over 100
             million URLs per month. Crawlers collect informative
             metadata from publishers' pages for 
@@ -146,9 +170,7 @@
           during this founding period.  
     \end{itemize}
   }
-
-  \cventry{Winter 2007 - Spring 2008}{Senior Python
-    contractor}{Wordstream}{Boston, MA}{}{
+  \cventry{Winter 2007 - Spring 2008}{Python Consultant}{Wordstream}{Boston, MA}{}{
     \begin{itemize}
       \item Designed and implemented a keyword-matching algorithm
         that accepts documents as its input and produces a list of
