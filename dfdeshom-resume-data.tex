@@ -1,0 +1,233 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+
+%%% Local Variables: 
+%%% coding: utf-8
+%%% mode: latex
+%%% TeX-engine: xetex
+%%% End: 
+
+\documentclass[8pt,letterpaper,final]{moderncv}
+\usepackage{fontspec}
+\ifx\HCode\UnDef\else\hypersetup{tex4ht}\fi 
+\moderncvtheme[darkred]{classic}
+
+% DOCUMENT LAYOUT
+\usepackage[scale=0.85]{geometry}
+\setlength{\hintscolumnwidth}{2cm}
+\AtBeginDocument{\recomputelengths}
+% FONTS
+\usepackage[utf8]{inputenc}
+\defaultfontfeatures{Mapping=tex-text} % converts LaTeX specials (``quotes'' --- dashes etc.) to unicode
+
+% Remove % to set to different fonts
+%\setromanfont [Ligatures={Common},Numbers={OldStyle}]{Adobe Caslon Pro}
+%\setmonofont[Scale=0.8]{Monaco} 
+
+% ---- CUSTOM AMPERSAND
+\newcommand{\amper}{{\fontspec[Scale=.95]{Adobe Caslon Pro}\selectfont\itshape\&}}
+\newcommand{\fan}{\phantom{caption}}
+
+% ---- MARGIN YEARS
+%\newcommand{\years}[1]{\marginpar{\scriptsize #1}}
+
+
+% PDF SETUP
+% ---- FILL IN HERE THE DOC TITLE AND AUTHOR
+
+% Personal Information 
+\firstname{Didier}
+\familyname{Deshommes}
+\address{1413 Oriole Ave.}{McAllen, TX 78504}
+\mobile{(919) 616-0344}
+\email{dfdeshom@gmail.com}
+
+\title{Didier Deshommes' Resume}
+
+\nopagenumbers{}
+
+\begin{document} 
+
+\maketitle
+
+\section{Executive Summary} 
+  \cvline{Summary}{Python data engineer who has designed and implemented
+    large-scale production systems from conception to
+    deployment. Experienced with writing, deploying and maintaining
+    data processing pipelines for 
+    analytics and search workloads, high-throughput RESTful APIs, web
+    crawlers and internal backend tools.
+}
+\cvline{Production Experience}{ Python, AWS/EMR, Spark, Chef/Ansible, 
+  Postgres, Elasticsearch, Redshift, Kafka, MongoDB, Docker, DroneCI,
+  Redis}
+\cvline{Languages}{Python, Golang, Java}
+\section{Experience}
+  \cventry{January 2017 - Present}{Data Engineer}{Restless Bandit}{San
+  Francisco, CA}{}{
+  \begin{itemize}
+  \item Responsible for maintaining and improving our data pipeline
+    using Spark and ElasticSearch. Increased the
+    speed of out data-processing by doing a combination of: optimizing
+    critical part of our code (using Cython) and designing better ways to run our daily
+    Spark jobs. 
+  \item Reduced cost of running daily EMR jobs by over 50\% in terms
+    of normalized instance hours by analyzing job resource usage
+    . Reduced the total time
+    time it took jobs to run from 4 hours to less than 2
+    hours. Made data pipeline more resilient by installing monitoring
+    and tracing checks throughout our code for faster debugging.
+%  \item Wrote various 
+  \item Created  internal  RESTful web APIs for use by our other data
+    pipelines using Python, Flask and Celery. Created various ansible/Docker
+    playbooks for provisioning and deploying machines running these APIs.   
+  \item Lead migration of over 30 internal python projects from
+    Python2 to Python3. Added integration and unit tests to all python
+    projects, along with CI integration (using Drone CI) to ensure a safer transition.       
+  \end{itemize}
+}
+  \cventry{May 2016 - January 2017}{Software Engineer}{Shareaholic}{Boston, MA }{}{
+      \begin{itemize}
+         \item Lead design and implementation of a system that built
+          user profiles (stored in S3) from various attributes such as 
+          geographic location, content  of pages visited, referrer
+          data, etc. These profiles were then used for highly-specific
+          targeting to various data partners. Wrote
+          the tooling to launch and run the data pipeline in our AWS
+          cluster, using Python and Spark . The system has delivered
+          thousands of additional 
+          revenue to data partners in its first 3 months existence by
+          combing through over 100 million data points every day.
+        \item Lead engineering effort to revamp our 100-machine
+          infrastructure managed by Chef. Re-wrote many of our custom
+            recipes and roles, added more recipes to increase
+            automation. Wrote a tool to make cloning or creating new
+            machines from AWS simpler. 
+       \end{itemize}
+  }
+  \cventry{ Spring 2011 - February 2016}{Backend Lead}{Parse.ly}{New
+    York, NY (Fully Remote Team)}{}{
+      \begin{itemize}
+        \item  Lead implementation of major backend systems for an
+          engineering team that grew from 3 to 20 over the course of 4
+          years. During this period, the company also grew to hundreds
+          of customers, millions in revenue and massive data
+          volumes. An overview of Parse.ly's core product is available
+          on its website.
+        \item After seed financing round in 2011, company hired other engineers to
+          focus on areas like dashboard design and time series data. Took full
+          ownership over backend systems and APIs while company pivoted into the
+          content analytics market, where it ended up finding
+          success. 
+          \item  Built our API, which allowed
+            customers to access analytic and recommendations data. It
+            was adopted by 40\% of customers and by 2015 was serving 2
+            billion calls per month. It serves 500
+            requests per second and peaks up to
+            2,000 requests per second. It powers
+            popular websites like The New Yorker and
+            Arstechnica. Also wrote its public documentation:
+            \url{https://www.parsely.com/docs/api/overview/endpoint.html} .
+            An overview of how the recommendation engine works can be
+            found here: \url{http://blog.parsely.com/post/3406/reco-engine/}
+        % \item Designed and created an API for our publishers to access their
+        %   analytics and recommendations data. The API powers multiple
+        %   live dashboards and widgets. It serves on average 500 requests per second
+        %   and peaks up to 1000-1500 requests per second. The
+        %   documentation for the API is here:
+        %   \url{https://www.parsely.com/docs/api/overview/endpoint.html}
+        %   . Technologies used: Tornado, Redis, MongoDB, ElasticSearch,
+        %   Cassandra.
+          \item Created the crawling system that processes over 100
+            million URLs per month. Crawlers collect informative
+            metadata from publishers' pages for 
+          display on the Parse.ly's Dash analytics dashboard.  
+        \item  Implemented several features in our real-time and batch
+          analytics pipeline that processes hundreds of millions of events per
+          day. The pipeline powers the Parse.ly's Dash analytics
+          product.    
+        \item Designed and implemented flexible auto-complete search for our
+            dashboard analytics users. Users could complete either the
+            beginning, middle or end of 
+            several words. Users were
+            able to search millions of titles, authors and sections in
+            a unified way  in less than 200ms. 
+        \item Designed and developed named entity recognition system using Solr, 
+          the Wikipedia index, Wikipedia traffic data, and NLTK. With
+          this feature, users were able to see what topics were
+          trending on the web based on the traffic they got from
+          Wikipedia traffic.
+        \item Automated  configuration and deployment for machines
+          that were used to do API, crawling or search work using Chef
+          and Vagrant.
+          \item During period of high growth, performed several
+            technology evaluations as company refreshed its technology
+            stack for scale. Company raised series A financing in 2013
+            and grew to a total headcount of over 40, while landing
+            new customers that included the highest-traffic websites
+            on the Internet, such as Reuters, The Huffington Post,
+            Business Insider, and WIRED. Evaluated distributed systems
+            like Elasticsearch and Cassandra, which were eventually
+            adopted to replace MongoDB and Solr. 
+      \end{itemize}
+  }
+  \cventry{Summer 2009 - Spring 2011}{Software Engineer \& Employee
+    \#1}{Parse.ly}{New York, NY (Fully Remote Team)}{}{
+    \begin{itemize}
+      \item First engineering hire at an early-stage startup that was
+        part of Dreamit Ventures 2009, a YCombinator-like startup
+        accelerator program in Philadelphia, PA. 
+      \item Wrote and launched the backend to the Parse.ly Reader,
+        a news article reader (similar concept to Flipboard, but
+        before Flipboard's launch) that displayed articles from the
+        web based on a user interests.  Worked
+        directly with CTO. A review of the Parse.ly Reader is here:
+        \url{http://blog.louisgray.com/2009/08/parsely-spices-up-news-based-on-your.html} 
+      \item Rewrote backend to support a content recommendation API
+          for publishers, as company moved into the enterprise API
+          space serving content publishers. These systems helped the
+          company land its first customers. Worked as sole full-time
+          engineer through Parse.ly's bootstrapping period. 
+        \item  Company raised a seed financing round in 2011 and
+          changed its focus, while re-using technology developed
+          during this founding period.  
+    \end{itemize}
+  }
+  \cventry{Winter 2007 - Spring 2008}{Python Consultant}{Wordstream}{Boston, MA}{}{
+    \begin{itemize}
+      \item Designed and implemented a keyword-matching algorithm
+        that accepts documents as its input and produces a list of
+        suggested hyperlinks to be added by a user. The suggested
+        keywords are based on the user's profile data. 
+    \end{itemize}
+  }
+  \cventry{2007 - 2008}{Software Engineer}{Intelligent Information Systems}{Durham, NC}{}{
+    \begin{itemize}
+      % \item Helped design and implement a web application that allows
+      %   some North Carolina counties to handle and process appeals
+      %   related to taxes on property made by residents of these
+      %   counties using C\#, ASP.NET, MS SQL and Javascript 
+      \item Designed and implemented a website so clients could
+        access and browse property inspection information 
+      \item Implemented and improved a procedure to port and test
+        programs written in VB6 to VB.NET. Converted over 100 programs
+        written in VB6 code to VB.NET using a combination of the MS
+        conversion tool and Python. 
+    \end{itemize}
+  }
+
+\section{Education}
+\cventry {Fall 2006 - Winter 2008}{MS Applied Mathematics, North
+  Carolina State University} {Raleigh, NC}{}{}{}
+\cventry{Fall 2001 - Winter 2006}{BS Computer Science, North Carolina State University}{Raleigh, NC}{}{}{}
+\cventry{Fall 2001 - Winter 2006}{BS Applied Mathematics, North Carolina State University}{Raleigh, NC}{}{}{}
+
+\section{Extra}
+\cvlistitem{Presenter,PyData: ``Wikipedia Indexing and Analysis'' - see \url{https://vimeo.com/53091620}}
+\cvlistitem{Contributor to open source projects - see
+    \url{https://github.com/dfdeshom}}
+\cvlistitem{Fluent in French}
+\cvlistitem{B1-B2 level in Spanish}
+
+
+\end{document}
